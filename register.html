@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ECO SHOP - Regjistrohu</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="auth-container">
+    <h2>Krijo Llogarinë Tënde</h2>
+    <form id="registerForm">
+      <label for="regName">Emri i Plotë:</label>
+      <input type="text" id="regName" placeholder="p.sh. Ana Krasniqi" required>
+
+      <label for="regEmail">Email:</label>
+      <input type="email" id="regEmail" placeholder="ana@email.com" required>
+
+      <label for="regUsername">Username:</label>
+      <input type="text" id="regUsername" placeholder="p.sh. anakra" required>
+
+      <label for="regPassword">Fjalëkalimi:</label>
+      <input type="password" id="regPassword" placeholder="Min. 6 karaktere" required>
+
+      <label for="regConfirmPassword">Konfirmo Fjalëkalimin:</label>
+      <input type="password" id="regConfirmPassword" required>
+
+      <button type="submit">Regjistrohu</button>
+      <p>Ke llogari? <a href="login.html">Hyr këtu</a></p>
+      <p id="registerMessage"></p>
+    </form>
+  </div>
+
+  <footer>
+    <div class="container">
+      <span class="footer-brand">ECO SHOP</span>
+      <p>© 2025 ECO SHOP</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('regName').value.trim();
+      const email = document.getElementById('regEmail').value.trim();
+      const username = document.getElementById('regUsername').value.trim();
+      const password = document.getElementById('regPassword').value;
+      const confirmPassword = document.getElementById('regConfirmPassword').value;
+      const msgEl = document.getElementById('registerMessage');
+
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+      if (name.split(' ').length < 2 || /\d/.test(name)) {
+        msgEl.textContent = 'Emri duhet të jetë i plotë (p.sh. Ana Krasniqi) dhe pa numra.';
+        msgEl.style.color = 'red';
+        return;
+      }
+
+      if (!emailRegex.test(email)) {
+        msgEl.textContent = 'Email-i është i pasaktë.';
+        msgEl.style.color = 'red';
+        return;
+      }
+
+      if (username.length < 3 || username.includes(' ')) {
+        msgEl.textContent = 'Username duhet të jetë i paktën 3 karaktere i gjatë dhe pa hapësira.';
+        msgEl.style.color = 'red';
+        return;
+      }
+
+      if (password.length < 6) {
+        msgEl.textContent = 'Fjalëkalimi duhet të jetë i paktën 6 karaktere i gjatë.';
+        msgEl.style.color = 'red';
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        msgEl.textContent = 'Fjalëkalimet nuk përputhen.';
+        msgEl.style.color = 'red';
+        return;
+      }
+
+      msgEl.textContent = 'Regjistrimi u krye me sukses! Tani mund të hyni.';
+      msgEl.style.color = 'green';
+
+      const user = { name, email, username, role: 'guest' };
+      localStorage.setItem('user_' + username, JSON.stringify(user));
+
+      setTimeout(() => {
+        window.location.href = 'login.html';
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
