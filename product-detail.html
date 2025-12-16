@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detaje Produkti - ECO SHOP</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-text">ECO</span><span class="logo-text highlight">SHOP</span>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="product-detail">
+    <!-- Do të mbushet me JS -->
+  </main>
+
+  <footer>
+    <div class="container">
+      <span class="footer-brand">ECO SHOP</span>
+      <p>© 2025 ECO SHOP</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const product = JSON.parse(localStorage.getItem('selectedProduct'));
+      if (!product) {
+        document.getElementById('product-detail').innerHTML = '<p class="error-message">Produkti nuk u gjet.</p>';
+        return;
+      }
+      document.getElementById('product-detail').innerHTML = `
+        <div class="product-detail-card">
+          <img src="${product.img}" alt="${product.name}" class="product-img" 
+               onerror="this.src='img/placeholder.jpg'">
+          <h2>${product.name}</h2>
+          <p class="price">${product.price}</p>
+          <p class="category">Kategoria: ${product.category.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</p>
+          <button class="add-to-cart-btn" onclick="alert('✅ Added to cart: ${product.name}')">Add to Cart</button>
+        </div>
+      `;
+    });
+  </script>
+</body>
+</html>
