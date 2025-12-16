@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="sq">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ECO SHOP — Natyra, e pakontaminuar</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="CSS/Style.css" />
 </head>
+
 <body>
 
   <header class="navbar">
     <div class="container">
       <div class="logo">
-        <span class="logo-text">Eco</span><span class="logo-text highlight">shop</span>
+        <span class="logo-text">ECO</span><span class="logo-text highlight">SHOP</span>
       </div>
       <nav>
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
+        <a href="about.html">About Us</a>
         <a href="products.html">Products</a>
         <a href="news.html">News</a>
         <a href="contact.html">Contact</a>
-        <a href="login.html" class="btn btn-sm">Login</a>
+        <a href="login.html" class="btn">Login</a>
       </nav>
     </div>
   </header>
 
+  <!-- HERO MODERN -->
   <main class="hero-modern">
     <div class="hero-content">
       <h1>Frutat siç duhet të jenë.<br><span class="highlight-text">Të freskëta. Të pastra. Të tua.</span></h1>
@@ -33,21 +36,23 @@
         <a href="#offer" class="btn btn-outline">Zbritja e javës →</a>
       </div>
     </div>
-    
+    <!-- DEKORIMI — HARKU ABSTRAKT -->
     <div class="hero-deco">
       <svg viewBox="0 0 100 100" class="deco-arc" aria-hidden="true">
-        <path d="M10,90 C30,70 70,70 90,90" stroke="var(--accent)" stroke-width="2" fill="none" opacity="0.15"/>
-        <path d="M10,10 C30,30 70,30 90,10" stroke="var(--accent)" stroke-width="2" fill="none" stroke-dasharray="6,4" opacity="0.1"/>
+        <path d="M10,90 C30,70 70,70 90,90" stroke="var(--accent)" stroke-width="2" fill="none" opacity="0.15" />
+        <path d="M10,10 C30,30 70,30 90,10" stroke="var(--accent)" stroke-width="2" fill="none" stroke-dasharray="6,4"
+          opacity="0.1" />
       </svg>
     </div>
   </main>
 
-
+  <!-- OFERTA -->
   <section id="offer" class="offer-section">
     <div class="container">
-      <div class="offer-badge"> Oferta e javës</div>
+      <div class="offer-badge">✨ Oferta e javës</div>
       <h2>Zbritje 20% në <strong>Frutat Bio</strong></h2>
-      <p class="offer-desc">Të gjitha frutat tona janë të kultivuara sipas standardit <em>EU Organic</em>. Pa aditivë. Pa kompromise.</p>
+      <p class="offer-desc">Të gjitha frutat tona janë të kultivuara sipas standardit <em>EU Organic</em>. Pa aditivë.
+        Pa kompromise.</p>
       <div class="offer-meta">
         <span class="offer-timer-label">Vlen deri më:</span>
         <span id="countdown" class="offer-timer">—</span>
@@ -56,6 +61,7 @@
     </div>
   </section>
 
+  <!-- TESTIMONI -->
   <section class="testimonial-modern">
     <div class="container">
       <div class="testimonial-card">
@@ -63,7 +69,8 @@
           <span class="avatar-initial">A</span>
         </div>
         <blockquote>
-          “Për herë të parë pas shumë  viteve, e riktheva shijen e vërtetë të një portokalli — pa shije kimike, pa paketim të tepërt. ECO SHOP më kthye besimin në blerjen online.”
+          “Për herë të parë pas viteve, e riktheva shijen e vërtetë të një portokalli — pa shije kimike, pa paketim të
+          tepërt. ECO SHOP më kthye besimin në blerjen online.”
         </blockquote>
         <div class="testimonial-author">
           <strong>Ana K.</strong>
@@ -73,6 +80,7 @@
     </div>
   </section>
 
+  <!-- CTA -->
   <section class="cta-section">
     <div class="container">
       <h3>Gati për të provuar?<br><span>E para porosi — falas dërgesa.</span></h3>
@@ -84,14 +92,15 @@
     <div class="container">
       <span class="footer-brand">eco<span class="highlight">shop</span></span>
       <p>© 2025 ECO SHOP. Të gjitha të drejtat e rezervuara.<br>
-      <small>Produkte 100% organike • Dërgesa brenda 24 orëve • Pagesa pas dorëzimit</small>
+        <small>Produkte 100% organike • Dërgesa brenda 24 orëve • Pagësim pas dorëzimit</small>
       </p>
     </div>
   </footer>
 
+  <!-- JS -->
   <script>
     function updateCountdown() {
-      const target = new Date("December 31, 2025").setHours(0,0,0,0);
+      const target = new Date("December 31, 2025").setHours(0, 0, 0, 0);
       const now = new Date().getTime();
       const diff = target - now;
       if (diff < 0) {
@@ -106,4 +115,5 @@
   </script>
 
 </body>
+
 </html>

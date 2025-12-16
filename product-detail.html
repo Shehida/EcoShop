@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="sq">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Detaje Produkti - ECO SHOP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ECO SHOP - Lajmet</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <header class="navbar">
     <div class="container">
@@ -14,40 +16,67 @@
       </div>
       <nav>
         <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
         <a href="products.html">Products</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html" class="btn">Login</a>
       </nav>
     </div>
   </header>
 
-  <main class="container" id="product-detail">
-    <!-- Do të mbushet me JS -->
+  <main class="container">
+    <h2>Lajmet & Njoftimet</h2>
+
+    <div class="news-list">
+      <div class="news-item">
+        <h3> Frutat e Reja Bio Janë Këtu!</h3>
+        <p class="date">10 Dhjetor 2025</p>
+        <p>
+          Stina e frutave të freskëta ka filluar! Tashmë në ofertë: <strong>mollë</strong>, <strong>banane</strong> dhe
+          <strong>frëza</strong>
+          nga fermat lokale. Të gjitha pa pesticide, të paketuara me kujdes për të ruajtur freskinë dhe aromën natyrale.
+        </p>
+      </div>
+
+      <div class="news-item">
+        <h3> Pijet e Reja Organike në Ofertë</h3>
+        <p class="date">28 Nëntor 2025</p>
+        <p>
+          Keni kërkuar — ne e kemi sjellë! <strong>Lëng i portokallit</strong> dhe <strong>Qumësht bajame </strong>
+          tashmë janë në katalogun tonë.
+          Të prodhuara lokal, pa shtesa kimike dhe të paketuara në amballazh të riciklueshëm.
+        </p>
+      </div>
+
+      <div class="news-item">
+        <h3> “Add to Cart” Tashmë Funksionon!</h3>
+        <p class="date">15 Nëntor 2025</p>
+        <p>
+          Tashmë mund të shtoni produktet në shportë me një klik! Testoni funksionalitetin me çdo produkt — nga
+          <strong>karotat bio</strong>
+          deri te <strong>kremat për fytyrë</strong>. Në fazën e ardhshme, do të shtojmë pagesën online.
+        </p>
+      </div>
+
+      <div class="news-item">
+        <h3> Dërgesat Tani Me Amballazh të Riciklueshëm</h3>
+        <p class="date">5 Nëntor 2025</p>
+        <p>
+          Në kuadër të angazhimit tonë për mjedisin, të gjitha dërgesat tashmë përdorin kuti prej kartoni të ricikluar
+          dhe mbushës
+          nga letër e përdorur. Një hap i vogël — por i rëndësishëm — për një të ardhme më të gjelbërt!
+        </p>
+      </div>
+    </div>
   </main>
 
   <footer>
     <div class="container">
       <span class="footer-brand">ECO SHOP</span>
-      <p>© 2025 ECO SHOP</p>
+      <p>© 2025 ECO SHOP. Të gjitha të drejtat e rezervuara.</p>
     </div>
   </footer>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const product = JSON.parse(localStorage.getItem('selectedProduct'));
-      if (!product) {
-        document.getElementById('product-detail').innerHTML = '<p class="error-message">Produkti nuk u gjet.</p>';
-        return;
-      }
-      document.getElementById('product-detail').innerHTML = `
-        <div class="product-detail-card">
-          <img src="${product.img}" alt="${product.name}" class="product-img" 
-               onerror="this.src='img/placeholder.jpg'">
-          <h2>${product.name}</h2>
-          <p class="price">${product.price}</p>
-          <p class="category">Kategoria: ${product.category.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</p>
-          <button class="add-to-cart-btn" onclick="alert('✅ Added to cart: ${product.name}')">Add to Cart</button>
-        </div>
-      `;
-    });
-  </script>
 </body>
+
 </html>
