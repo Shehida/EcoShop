@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ECO SHOP - Products</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-text">ECO</span><span class="logo-text highlight">SHOP</span>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html" class="btn">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Produktet Tona</h2>
+
+    <div class="categories">
+      <button class="cat-btn" onclick="filterProducts('all')">Të gjitha</button>
+      <button class="cat-btn" onclick="filterProducts('fruta-bio')">Fruta Bio</button>
+      <button class="cat-btn" onclick="filterProducts('perime-bio')">Perime Bio</button>
+      <button class="cat-btn" onclick="filterProducts('pije-bio')">Pije Bio</button>
+      <button class="cat-btn" onclick="filterProducts('snacks')">Snacks</button>
+      <button class="cat-btn" onclick="filterProducts('grure')">Grurë</button>
+      <button class="cat-btn" onclick="filterProducts('kujdesi-personal')">Kujdesi Personal</button>
+      <button class="cat-btn" onclick="filterProducts('produkte-per-shtepi')">Produkte për Shtëpi</button>
+    </div>
+
+    <div id="products-container" class="products-grid">
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span class="footer-brand">ECO SHOP</span>
+      <p>© 2025 ECO SHOP</p>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+</body>
+</html>
