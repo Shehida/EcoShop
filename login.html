@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ECO SHOP - Login</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="auth-container">
+    <h2>Hyr në Llogarinë Tënde</h2>
+    <form id="loginForm">
+      <label>Roli:</label>
+<div class="radio-group">
+  <label class="radio-option">
+    <input type="radio" name="role" value="guest" checked>
+    Guest
+  </label>
+  <label class="radio-option">
+    <input type="radio" name="role" value="admin">
+    Admin
+  </label>
+</div>
+
+      <label for="username">Username:</label>
+      <input type="text" id="username" required>
+
+      <label for="password">Fjalëkalimi:</label>
+      <input type="password" id="password" required>
+
+      <button type="submit">Hyr</button>
+      <p>Nuk ke llogari? <a href="register.html">Regjistrohu këtu</a></p>
+      <p id="loginMessage"></p>
+    </form>
+  </div>
+
+  <footer>
+    <div class="container">
+      <span class="footer-brand">ECO SHOP</span>
+      <p>© 2025 ECO SHOP</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const role = document.querySelector('input[name="role"]:checked').value;
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+
+      if (username === '' || password === '') {
+        document.getElementById('loginMessage').textContent = 'Plotëso të gjitha fushat.';
+        return;
+      }
+
+      if (role === 'admin') {
+        if (username === 'admin' && password === 'admin123') {
+          alert('Mirë se vini, Admin!');
+          localStorage.setItem('userRole', 'admin');
+          window.location.href = 'index.html';
+        } else {
+          document.getElementById('loginMessage').textContent = 'Kredencialet e gabuara për Admin.';
+        }
+      } else {
+        alert(`Mirë se vini, ${username}!`);
+        localStorage.setItem('userRole', 'guest');
+        localStorage.setItem('username', username);
+        window.location.href = 'index.html';
+      }
+    });
+  </script>
+</body>
+</html>
